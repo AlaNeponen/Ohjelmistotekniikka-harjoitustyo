@@ -1,2 +1,5 @@
-#Otsikko#
-Tässä tavallista, tai _ainakin_ __melkein _tavallista_ __ tekstiä :^).
+# Ohte-harjoitustyö #
+**Esimerkkitekstiä, *jossa sekoitettuna* tyylejä.**
+*Tehtäviä:*
+[komentorivi.txt](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+[gitlog.txt](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
