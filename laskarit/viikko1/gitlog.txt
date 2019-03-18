@@ -1,0 +1,124 @@
+commit ead4afcaa292e7f32c7ab20a1eee1eb7886d6c51
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:21:08 2019 +0200
+
+    Tiedosto poistettu ja toinen nimetty uudelleen
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 813c6e98156fe6921760048ea61e0908ea7ca4f0
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:14:38 2019 +0200
+
+    pikkuvirhe korjattu tiedostoissa
+
+ tiedostoja/file         | 0
+ tiedostoja/{1 => file1} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b2c1a0c62f2132f68232570040b2cfd51beeb5bc
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:12:25 2019 +0200
+
+    tiedostoja kansio lisätty
+
+ tiedostoja/1     | 0
+ tiedostoja/file  | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 21b13b38ee1218f26855c4974bcc744680f82ff8
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:06:58 2019 +0200
+
+    muutoksia eka.txt ja kolmas.txt
+
+ eka.txt    | 4 ++--
+ kolmas.txt | 3 ++-
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 1d24769cf430ed15bcac9482739ac23b4c6bb3ad
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:04:08 2019 +0200
+
+    tiedosto.txt nimi vaihdettu to eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e5ef0b77058495169d62b7ec46486407b2e01abe
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:03:06 2019 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 56be8077b9d7cd23a3e772f1c331b4a06849314b
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 01:01:02 2019 +0200
+
+    tiedosto.txt sisältöä päivitetty
+
+ tiedosto.txt | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit e5b027c436bfe4594ad710efc75604c297138bd1
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 00:59:17 2019 +0200
+
+    lisäys tiedosto.txt:n
+
+ tiedosto.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 8166783d7b5016f366f5e59542962f92768d35c7
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 00:56:21 2019 +0200
+
+    Stuff lisätty
+
+ stuff/tisBeTheStuff | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 58c5ed95cd71624f1dad6c670b691b1c23e13bff
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 00:55:22 2019 +0200
+
+    toinen.txt ja kolmas.txt muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 2a6c9919a78fdfafe4572842a070322eb70367d1
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 00:54:26 2019 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f8db2dbe07d28d9b89744e419d5e46deb8560cb5
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 00:52:56 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit d9754e56aad3be6d270b00bb11370688751f0bc3
+Author: Teemu Närhi <t.a.narhi@gmail.com>
+Date:   Tue Mar 19 00:51:17 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
