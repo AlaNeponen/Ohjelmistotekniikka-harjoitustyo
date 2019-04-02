@@ -38,7 +38,7 @@ public class Main extends Application{
         Button back = new Button("Return to main menu");
         Label badEnding = new Label("Bad ending :(");
         Label goodEnding = new Label("Good ending :3");
-        
+        Button goodBack = new Button("Return to main menu");
         
         GridPane grid = new GridPane();
         grid.getChildren().add(start);
@@ -55,7 +55,7 @@ public class Main extends Application{
         
         BorderPane goodEndPane = new BorderPane();
         goodEndPane.setTop(goodEnding);
-        goodEndPane.setBottom(back);
+        goodEndPane.setBottom(goodBack);
         
         Scene goodEnd = new Scene(goodEndPane);
         
@@ -77,6 +77,9 @@ public class Main extends Application{
             primaryStage.setScene(badEnd);
         });
         back.setOnAction((ActionEvent event) -> {
+            primaryStage.setScene(startScreen);
+        });
+        goodBack.setOnAction((ActionEvent event) -> {
             primaryStage.setScene(startScreen);
         });
         
