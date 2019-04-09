@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rpgame.Views;
+package rpgame.views;
 
 import rpgame.logics.Being;
 import javafx.scene.control.Button;

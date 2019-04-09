@@ -1,7 +1,7 @@
 package rpgame.main;
 
-import rpgame.Views.CombatView;
-import rpgame.Views.StoryView;
+import rpgame.views.CombatView;
+import rpgame.views.StoryView;
 import rpgame.logics.Being;
 import java.util.Random;
 import javafx.application.Application;
