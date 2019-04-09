@@ -1,1 +1,1 @@
-![Alt tekst](pakkausrakenne.jpg "Pakkausrakenne")
+![Alt text](pakkausrakenne.jpg)
