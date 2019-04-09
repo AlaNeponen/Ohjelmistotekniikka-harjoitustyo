@@ -45,7 +45,7 @@ public class BeingTest {
     
     @Before
     public void setUp() {
-        model = new Being();
+        model = new Being("test");
     }
     
     @After

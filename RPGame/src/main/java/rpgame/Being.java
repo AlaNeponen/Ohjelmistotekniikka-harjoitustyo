@@ -5,15 +5,21 @@
  */
 package rpgame;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author nate
  */
 public class Being {
     private int Hitpoints;
-    
-    public Being() {
+    private String name;
+    private StringProperty status;
+    public Being(String name) {
         Hitpoints = 100;
+        this.name = name;
+        status = new SimpleStringProperty();
     }
 
     public int getHitpoints() {
@@ -25,5 +31,12 @@ public class Being {
         if (this.Hitpoints < 0) {
             this.Hitpoints = 0;
         }
+    }
+    public StringProperty getStatus() {
+        return status;
+    }
+    public void setStatus() {
+        String stats = name + " health: " + Hitpoints;
+        status.set(stats);
     }
 }

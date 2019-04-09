@@ -1,5 +1,6 @@
 package rpgame;
 
+import java.util.Random;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,66 +24,69 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) {
+        Random dice = new Random();
         
-        //HUOM! Oikea sovelluslogiikka ei tule olemaan tälläistä yhteen 
-        // luokaan tungettua spagettia :D
+        Being player = new Being("Player");
+        Being enemy = new Being("Goblin");
         
-        primaryStage.setTitle("RPGame");
-        Button start = new Button("New Game");
-        Button good = new Button("Do the good thing");
-        Button bad = new Button("Do the bad thing");
-        Label exposition = new Label("Choose what to do :^)");
-        Button back = new Button("Return to main menu");
-        Label badEnding = new Label("Bad ending :(");
-        Label goodEnding = new Label("Good ending :3");
-        Button goodBack = new Button("Return to main menu");
+        StoryView start = new StoryView("RPGame");
+        StoryView choice = new StoryView("You come across an angry goblin which challenges you to a fight :d");
+        StoryView end = new StoryView("Boss defeated :^)");
+        StoryView badEnd = new StoryView("You died xd");
+        CombatView fight = new CombatView(player, enemy);
+    
+        end.setOption2("Back to start");
+        start.setOption1("Play game");
+        choice.setOption1("Fight the goblin");
+        choice.setOption2("Attempt to run away");
+        badEnd.setOption1("Back to start");
         
-        GridPane grid = new GridPane();
-        grid.getChildren().add(start);
-        Scene startScreen = new Scene(grid);
+        Scene first = new Scene(start.getFrame());
+        Scene second = new Scene(end.getFrame());
+        Scene third = new Scene(fight.getFrame());
+        Scene fourth = new Scene(choice.getFrame());
+        Scene fifth = new Scene(badEnd.getFrame());
         
-        BorderPane storyPane = new BorderPane();
-        
-        HBox buttons = new HBox();
-        buttons.setSpacing(20);
-        buttons.getChildren().add(good);
-        buttons.getChildren().add(bad);
-        storyPane.setBottom(buttons);
-        storyPane.setTop(exposition);
-        
-        BorderPane goodEndPane = new BorderPane();
-        goodEndPane.setTop(goodEnding);
-        goodEndPane.setBottom(goodBack);
-        
-        Scene goodEnd = new Scene(goodEndPane);
-        
-        BorderPane badEndPane = new BorderPane();
-        badEndPane.setTop(badEnding);
-        badEndPane.setBottom(back);
-        
-        Scene badEnd = new Scene(badEndPane);
-        
-        Scene storyScene = new Scene(storyPane);
-        
-        start.setOnAction((ActionEvent event) -> {
-            primaryStage.setScene(storyScene);
+        Button back2 = badEnd.getOption1();
+        back2.setOnAction((event) -> {
+            primaryStage.setScene(first);
         });
-        good.setOnAction((ActionEvent event) -> {
-           primaryStage.setScene(goodEnd);
+        Button run = choice.getOption2();
+        run.setOnAction((event) -> {
+            primaryStage.setScene(fifth);
         });
-        bad.setOnAction((ActionEvent event) -> {
-            primaryStage.setScene(badEnd);
+        Button challenge = choice.getOption1();
+        challenge.setOnAction((event) -> {
+            primaryStage.setScene(third);
         });
-        back.setOnAction((ActionEvent event) -> {
-            primaryStage.setScene(startScreen);
-        });
-        goodBack.setOnAction((ActionEvent event) -> {
-            primaryStage.setScene(startScreen);
+        Button advance = start.getOption1();
+        advance.setOnAction((event) ->{
+            primaryStage.setScene(fourth);
         });
         
-        primaryStage.setScene(startScreen);
+        Button back = end.getOption2();
+        back.setOnAction((event) -> {
+            primaryStage.setScene(first);
+        });
+        
+        Button strike = fight.getAttack();
+        strike.setOnAction((event) -> {
+            int roll = dice.nextInt(6);
+            if (roll > 2) {
+                enemy.takeDamage(50);
+            }
+            if (roll == 0) {
+                player.takeDamage(25);
+            }
+            if (enemy.getHitpoints() == 0) {
+                primaryStage.setScene(second);
+            }
+            player.setStatus();
+            enemy.setStatus();
+        });
+        
+        primaryStage.setScene(first);
         primaryStage.show();
-        
     }
     
 }
