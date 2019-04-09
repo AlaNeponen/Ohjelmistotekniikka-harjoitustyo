@@ -19,6 +19,13 @@
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.0</version>
+            <configuration>
+              <excludes>
+                <exclude>default</exclude>
+                <exclude>rpgame/main/*</exclude>
+                <exclude>rpgame/views/*</exclude>
+              </excludes>
+            </configuration> 
             <executions>
                 <execution>
                     <id>default-prepare-agent</id>
