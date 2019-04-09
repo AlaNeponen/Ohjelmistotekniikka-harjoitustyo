@@ -1,1 +1,1 @@
-![Alt tekst](pakkausrakenne.jpg raw=true "Pakkausrakenne")
+![Alt tekst](pakkausrakenne.jpg "Pakkausrakenne")
