@@ -50,4 +50,7 @@ public class Being {
         }
         
     }
+    public String getName() {
+        return name;
+    }
 }
