@@ -7,5 +7,5 @@ Sovellus on yksinkertaista graafista käyttöliittymää hyödyntävä luettuun 
 * [työaikakirjanpito](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 * [Sovelluksen pakkausrakenne](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
-## Linkki sovellukseeen
-* [Nykyinen release](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
+## Releaset
+* [viikko 5](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
