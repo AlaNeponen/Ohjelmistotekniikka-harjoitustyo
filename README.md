@@ -13,6 +13,8 @@ Sovellus on yksinkertaista graafista käyttöliittymää hyödyntävä luettuun 
 
 ## Komentorivitoiminnot
 
+***HUOM!** Komennoissa oletetaan että käyttäjä **on** kansiossa **RPGame***
+
 ### Testaus
 Testit saa suoritettua komennolla `mvn test`
 
