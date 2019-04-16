@@ -5,6 +5,7 @@ import rpgame.views.CombatView;
 import rpgame.views.StoryView;
 import rpgame.logics.Being;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -33,15 +34,16 @@ public class Main extends Application{
         beings.add(king);
         
         StoryView start = new StoryView("RPGame");
-        StoryView choice = new StoryView("You come across an angry goblin which challenges you to a fight :d");
+        StoryView choice = new StoryView("You come across an angry goblin which challenges you to a fight :d" + "\n" + "\n" + "\n" + "\n");
         StoryView end = new StoryView("Boss defeated :^)");
         StoryView badEnd = new StoryView("You died xd");
         CombatView fight = new CombatView(player, goblin);
-        StoryView goblinKing = new StoryView("The murder of his subject has caught the attention of the Goblin King, and you are forcibly brought before him to answer for your crimes.");
+        StoryView goblinKing = new StoryView("The murder of his subject has caught the attention of the Goblin King, and you are forcibly brought before him to answer for your crimes." + "\n" + "\n" + "\n" + "\n");
         CombatView bossFight = new CombatView(player, king);
         
         end.setOption2("Back to start");
         start.setOption1("Play game");
+        start.setOption2("Exit game :(");
         choice.setOption1("Fight the goblin");
         choice.setOption2("Attempt to run away");
         badEnd.setOption1("Back to start");
@@ -141,6 +143,11 @@ public class Main extends Application{
             }
             player.setStatus();
             king.setStatus();
+        });
+        
+        Button exit = start.getOption2();
+        exit.setOnAction((event) -> {
+            Platform.exit();
         });
         
         primaryStage.setScene(first);
