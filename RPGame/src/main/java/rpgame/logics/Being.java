@@ -37,7 +37,17 @@ public class Being {
         return status;
     }
     public void setStatus() {
-        String stats = name + " health: " + Hitpoints;
+        String stats = name + " Health: " + Hitpoints;
         status.set(stats);
+    }
+    public void setHitpoints(int amount) {
+        if (amount > 100) {
+            Hitpoints = 100;
+        }else if (amount < 0) {
+            Hitpoints = 0;
+        } else {
+            Hitpoints = amount;
+        }
+        
     }
 }

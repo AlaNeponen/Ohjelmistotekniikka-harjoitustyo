@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import javafx.beans.property.StringProperty;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,7 +36,28 @@ public class BeingTest {
         model.takeDamage(150);
         assertEquals(0, model.getHitpoints());
     }
-    
+    @Test
+    public void statusSetterAndGetterWorkingAsIntended() {
+        model.setStatus();
+        StringProperty property = model.getStatus();
+        String stats = property.toString();
+        assertEquals("StringProperty [value: test Health: 100]", stats);
+    }
+    @Test
+    public void cantSetNegativeHP() {
+        model.setHitpoints(-50);
+        assertEquals(0, model.getHitpoints());
+    }
+    @Test
+    public void cantSetHPGreaterThanHundred() {
+        model.setHitpoints(500);
+        assertEquals(100, model.getHitpoints());
+    }
+    @Test 
+    public void setHPToGivenAmount() {
+        model.setHitpoints(22);
+        assertEquals(22, model.getHitpoints());
+    }
     @Before
     public void setUp() {
         model = new Being("test");

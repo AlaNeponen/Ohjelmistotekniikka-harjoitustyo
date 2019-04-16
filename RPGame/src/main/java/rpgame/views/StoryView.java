@@ -6,6 +6,7 @@
 package rpgame.views;
 
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -21,11 +22,15 @@ public class StoryView {
     private BorderPane frame;
     private Button option1;
     private Button option2;
-    
+ 
     public StoryView(String text) {
         this.frame = new BorderPane();
+        frame.prefHeight(300);
+        frame.prefWidth(1000);
+        frame.setPadding(new Insets(20, 20, 20, 20));
         this.label = new Label(text);
         frame.setTop(label);
+        
     }
     public void setOption1(String text) {
         option1 = new Button(text);

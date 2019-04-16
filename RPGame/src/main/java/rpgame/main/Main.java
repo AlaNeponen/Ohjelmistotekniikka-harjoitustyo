@@ -1,5 +1,6 @@
 package rpgame.main;
 
+import java.util.ArrayList;
 import rpgame.views.CombatView;
 import rpgame.views.StoryView;
 import rpgame.logics.Being;
@@ -16,6 +17,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import rpgame.logics.Dice;
 /**
  *
  * @author nate
@@ -27,16 +29,19 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) {
-        Random dice = new Random();
+        Dice dice = new Dice();
         
+        ArrayList<Being> beings = new ArrayList<>();
         Being player = new Being("Player");
-        Being enemy = new Being("Goblin");
+        Being goblin = new Being("Goblin");
+        beings.add(player);
+        beings.add(goblin);
         
         StoryView start = new StoryView("RPGame");
         StoryView choice = new StoryView("You come across an angry goblin which challenges you to a fight :d");
         StoryView end = new StoryView("Boss defeated :^)");
         StoryView badEnd = new StoryView("You died xd");
-        CombatView fight = new CombatView(player, enemy);
+        CombatView fight = new CombatView(player, goblin);
     
         end.setOption2("Back to start");
         start.setOption1("Play game");
@@ -44,11 +49,11 @@ public class Main extends Application{
         choice.setOption2("Attempt to run away");
         badEnd.setOption1("Back to start");
         
-        Scene first = new Scene(start.getFrame());
-        Scene second = new Scene(end.getFrame());
-        Scene third = new Scene(fight.getFrame());
-        Scene fourth = new Scene(choice.getFrame());
-        Scene fifth = new Scene(badEnd.getFrame());
+        Scene first = new Scene(start.getFrame(), 1000, 300);
+        Scene second = new Scene(end.getFrame(), 1000, 300);
+        Scene third = new Scene(fight.getFrame(), 1000, 300);
+        Scene fourth = new Scene(choice.getFrame(), 1000, 300);
+        Scene fifth = new Scene(badEnd.getFrame(), 1000, 300);
         
         Button back2 = badEnd.getOption1();
         back2.setOnAction((event) -> {
@@ -60,10 +65,16 @@ public class Main extends Application{
         });
         Button challenge = choice.getOption1();
         challenge.setOnAction((event) -> {
+            player.setStatus();
+            goblin.setStatus();
+            fight.reset();
             primaryStage.setScene(third);
         });
         Button advance = start.getOption1();
         advance.setOnAction((event) ->{
+            for (Being being : beings) {
+                being.setHitpoints(100);
+            }
             primaryStage.setScene(fourth);
         });
         
@@ -72,20 +83,33 @@ public class Main extends Application{
             primaryStage.setScene(first);
         });
         
+        Button onwards = new Button("Continue");
+        onwards.setOnAction((event) -> {
+            primaryStage.setScene(second);
+        });
+        
         Button strike = fight.getAttack();
         strike.setOnAction((event) -> {
-            int roll = dice.nextInt(6);
-            if (roll > 2) {
-                enemy.takeDamage(50);
-            }
-            if (roll == 0) {
+            dice.roll();
+            if (dice.criticalMiss()) {
                 player.takeDamage(25);
+                fight.setMiddle("The goblin hit you for 25 hp!");
+                if (player.getHitpoints() == 0) {
+                    primaryStage.setScene(fifth);
+                }
+            } else if (!dice.hit()) {
+                fight.setMiddle("You missed!");
+            } else {
+                goblin.takeDamage(50);
+                fight.setMiddle("You hit the goblin for 50 hp!");
             }
-            if (enemy.getHitpoints() == 0) {
-                primaryStage.setScene(second);
+            
+            if (goblin.getHitpoints() == 0) {
+                fight.setMiddle("You've slain the goblin!");
+                fight.setContinue(onwards);
             }
             player.setStatus();
-            enemy.setStatus();
+            goblin.setStatus();
         });
         
         primaryStage.setScene(first);
