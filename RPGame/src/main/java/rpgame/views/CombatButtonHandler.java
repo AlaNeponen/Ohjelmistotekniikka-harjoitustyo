@@ -28,11 +28,11 @@ public class CombatButtonHandler {
         damageToEnemy = amount;
     }
     
-    public void Handle(CombatView view, Being player, Being enemy) {
+    public void handle(CombatView view, Being player, Being enemy) {
         dice.roll();
         if (dice.criticalMiss()) {
             player.takeDamage(damageToSelf);
-            view.setMiddle("You rolled a "+ dice.getResult() + "?! " + "The " + enemy.getName() + " hit you for " + damageToSelf + " hp!");
+            view.setMiddle("You rolled a " + dice.getResult() + "?! " + "The " + enemy.getName() + " hit you for " + damageToSelf + " hp!");
         } else if (!dice.hit()) {
             view.setMiddle("You rolled a " + dice.getResult() + ". " + "You missed!");
         } else {

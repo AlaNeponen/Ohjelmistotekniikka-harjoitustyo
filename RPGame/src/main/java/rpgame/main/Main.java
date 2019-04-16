@@ -93,7 +93,7 @@ public class Main extends Application{
         
         Button strike = fight.getAttack();
         strike.setOnAction((event) -> {
-            handler.Handle(fight, player, goblin);
+            handler.handle(fight, player, goblin);
             
             if (player.getHitpoints() == 0) {
                     primaryStage.setScene(fifth);
@@ -129,7 +129,7 @@ public class Main extends Application{
         
         Button strike2 = bossFight.getAttack();
         strike2.setOnAction((event) -> {
-            handler.Handle(bossFight, player, king);
+            handler.handle(bossFight, player, king);
             
             if (player.getHitpoints() == 0) {
                 primaryStage.setScene(fifth);
