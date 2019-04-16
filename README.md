@@ -5,7 +5,7 @@ Sovellus on yksinkertaista graafista käyttöliittymää hyödyntävä luettuun 
 ## Dokumentaatio
 * [alustava määrittelydokumentti](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
 * [työaikakirjanpito](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
-* [Sovelluksen pakkausrakenne sekä erästä prosessia kuvaava sekvenssikaavio](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+* [Arkkitehtuurikuvaus](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
 ## Releaset
 * [viikko 5](https://github.com/AlaNeponen/Ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
