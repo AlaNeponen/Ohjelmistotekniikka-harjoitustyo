@@ -12,8 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 /**
- *
- * @author nate
+ * This class provides the framework for a scene object in which the player Being is engaged in combat
  */
 public class CombatView {
     private BorderPane frame;
@@ -21,6 +20,12 @@ public class CombatView {
     private Label yourStats;
     private Label enemyStats;
     
+    /**
+     * Creates a new CombatView object, and binds the statuses of both Beings to this CombatView
+     * So that the view can accurately display the hitpoints of both Beings
+     * @param player the player Being
+     * @param enemy the Being the player is fighting against in this CombatView
+     */
     public CombatView(Being player, Being enemy) {
         frame = new BorderPane();
         frame.setPadding(new Insets(20, 20, 20, 20));
@@ -50,6 +55,9 @@ public class CombatView {
     public void setContinue(Button button) {
         frame.setBottom(button);
     }
+    /** 
+     * Resets this CombatView to its original state (clears the hit/miss the CombatButtonHandler has set there from the middle :^)
+     */
     public void reset() {
         frame.setBottom(attack);
         frame.setCenter(null);

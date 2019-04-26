@@ -14,8 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
- *
- * @author nate
+ * This class provides a framework for a scene in which the player is presented with some story, and a choice
  */
 public class StoryView {
     private Label label;
@@ -23,6 +22,10 @@ public class StoryView {
     private Button option1;
     private Button option2;
  
+    /** 
+     * Creates a new StoryView with the given text as the bit of "story" presented to the player
+     * @param text a text describing the situation to the player
+     */
     public StoryView(String text) {
         this.frame = new BorderPane();
         frame.prefHeight(300);
@@ -32,10 +35,18 @@ public class StoryView {
         frame.setTop(label);
         
     }
+    /**
+     * Sets up a button representing one of the options the player can now choose
+     * @param text a text describing this option
+     */
     public void setOption1(String text) {
         option1 = new Button(text);
         frame.setLeft(option1);
     }
+    /**
+     * Sets up a button representing one of the options the player can now choose
+     * @param text a text describing this option
+     */
     public void setOption2(String text) {
         option2 = new Button(text);
         frame.setRight(option2);
