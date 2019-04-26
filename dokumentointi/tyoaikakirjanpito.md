@@ -7,4 +7,5 @@ Päivä | Aika | Mitä tein
 9/4/19| 1,5h| Sähläsin kasaan sovelluksen toisen version
 16/4/19 | 3h | Sovelluksen päivittelyä
 16/4/19 | 1h | Releasen ja sekvenssikaavion tekeminen, sekä README:n päivitys
-Yhteensä | 9,5h |
+26/04/19 | 1,5h | Alustavan JavaDocin, sekä "käyttöohjeen" tekeminen
+Yhteensä | 11h |
