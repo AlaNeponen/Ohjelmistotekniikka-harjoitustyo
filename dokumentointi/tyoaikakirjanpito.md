@@ -8,4 +8,5 @@ Päivä | Aika | Mitä tein
 16/4/19 | 3h | Sovelluksen päivittelyä
 16/4/19 | 1h | Releasen ja sekvenssikaavion tekeminen, sekä README:n päivitys
 26/04/19 | 1,5h | Alustavan JavaDocin, sekä "käyttöohjeen" tekeminen
-Yhteensä | 11h |
+05/05/19 | 3h | Vaikeustason valitsemisen lisääinen, ja sovelluksen dokumentaation päivittäminen loppupalautusta varten
+Yhteensä | 14h |
