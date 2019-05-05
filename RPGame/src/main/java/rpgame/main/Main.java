@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import rpgame.domain.Being;
 import rpgame.domain.Dice;
-import rpgame.logics.CombatButtonHandler;
+import rpgame.views.CombatButtonHandler;
 import rpgame.views.DifficultyView;
 /**
  *

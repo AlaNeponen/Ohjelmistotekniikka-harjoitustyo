@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rpgame.logics;
+package rpgame.views;
 
 import rpgame.domain.Being;
 import rpgame.domain.Dice;
-import rpgame.views.CombatView;
 
 /**
  * This class handles the logic behind the ingame "combat"
