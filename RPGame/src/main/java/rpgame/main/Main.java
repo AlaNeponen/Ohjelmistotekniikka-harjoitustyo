@@ -3,14 +3,15 @@ package rpgame.main;
 import java.util.ArrayList;
 import rpgame.views.CombatView;
 import rpgame.views.StoryView;
-import rpgame.logics.Being;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import rpgame.logics.Dice;
-import rpgame.views.CombatButtonHandler;
+import rpgame.domain.Being;
+import rpgame.domain.Dice;
+import rpgame.logics.CombatButtonHandler;
+import rpgame.views.DifficultyView;
 /**
  *
  * @author nate
@@ -32,7 +33,10 @@ public class Main extends Application{
         beings.add(player);
         beings.add(goblin);
         beings.add(king);
+        goblin.setDamageTaken(50);
+        king.setDamageTaken(25);
         
+        DifficultyView diff = new DifficultyView();
         StoryView start = new StoryView("RPGame");
         StoryView choice = new StoryView("You come across an angry goblin which challenges you to a fight :d" + "\n" + "\n" + "\n" + "\n");
         StoryView end = new StoryView("Boss defeated :^)");
@@ -57,6 +61,7 @@ public class Main extends Application{
         Scene fifth = new Scene(badEnd.getFrame(), 1000, 300);
         Scene sixth = new Scene(goblinKing.getFrame(), 1000, 300);
         Scene seventh = new Scene(bossFight.getFrame(), 1000, 300);
+        Scene difficulty = new Scene(diff.getFrame(), 1000, 300);
         
         Button back2 = badEnd.getOption1();
         back2.setOnAction((event) -> {
@@ -71,8 +76,6 @@ public class Main extends Application{
             player.setStatus();
             goblin.setStatus();
             fight.reset();
-            handler.setDamageToEnemy(50);
-            handler.setDamageToSelf(25);
             primaryStage.setScene(third);
         });
         Button advance = start.getOption1();
@@ -80,7 +83,7 @@ public class Main extends Application{
             for (Being being : beings) {
                 being.setHitpoints(100);
             }
-            primaryStage.setScene(fourth);
+            primaryStage.setScene(difficulty);
         });
         
         Button back = end.getOption2();
@@ -119,8 +122,6 @@ public class Main extends Application{
             bossFight.reset();
             player.setStatus();
             king.setStatus();
-            handler.setDamageToEnemy(25);
-            handler.setDamageToSelf(50);
             primaryStage.setScene(seventh);
         });
         
@@ -148,6 +149,26 @@ public class Main extends Application{
         Button exit = start.getOption2();
         exit.setOnAction((event) -> {
             Platform.exit();
+        });
+        
+        Button begin = diff.getStart();
+        begin.setOnAction((event) -> {
+            primaryStage.setScene(fourth);
+        });
+        
+        Button easy = diff.getEz();
+        easy.setOnAction((event) ->{
+            player.setDamageTaken(20);
+        });
+        
+        Button normal = diff.getNormal();
+        normal.setOnAction((event) -> {
+            player.setDamageTaken(25);
+        });
+        
+        Button hard = diff.getHard();
+        hard.setOnAction((event) -> {
+            player.setDamageTaken(50);
         });
         
         primaryStage.setScene(first);

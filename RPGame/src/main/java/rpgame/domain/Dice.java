@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rpgame.logics;
+package rpgame.domain;
 
 import java.util.Random;
 
@@ -23,7 +23,7 @@ public class Dice {
      * Method sets a new value (0-6) as the current result
      */
     public void roll() {
-        currentResult = random.nextInt(6);
+        currentResult = random.nextInt(7);
     }
     
     /**

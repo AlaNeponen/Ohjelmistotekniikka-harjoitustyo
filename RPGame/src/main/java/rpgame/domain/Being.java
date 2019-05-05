@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rpgame.logics;
+package rpgame.domain;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -16,6 +16,7 @@ public class Being {
     private int hitpoints;
     private String name;
     private StringProperty status;
+    private int damageTaken;
     
     /** 
      * Creates a new Being with the given name
@@ -71,5 +72,11 @@ public class Being {
     }
     public String getName() {
         return name;
+    }
+    public void setDamageTaken(int amount) {
+        damageTaken = amount;
+    }
+    public int getDamageTaken() {
+        return damageTaken;
     }
 }

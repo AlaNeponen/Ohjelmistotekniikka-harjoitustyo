@@ -6,7 +6,7 @@
 package rpgame.views;
 
 import javafx.geometry.Insets;
-import rpgame.logics.Being;
+import rpgame.domain.Being;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;

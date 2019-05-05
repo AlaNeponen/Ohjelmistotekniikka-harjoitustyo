@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rpgame.views;
+package rpgame.logics;
 
-import rpgame.logics.Being;
-import rpgame.logics.Dice;
+import rpgame.domain.Being;
+import rpgame.domain.Dice;
+import rpgame.views.CombatView;
 
 /**
  * This class handles the logic behind the ingame "combat"
@@ -14,19 +15,10 @@ import rpgame.logics.Dice;
  */
 public class CombatButtonHandler {
     private Dice dice;
-    private int damageToEnemy;
-    private int damageToSelf;
     public CombatButtonHandler(Dice dice) {
         this.dice = dice;
     }
     
-    public void setDamageToSelf(int amount) {
-        damageToSelf = amount;
-    }
-    
-    public void setDamageToEnemy(int amount) {
-        damageToEnemy = amount;
-    }
     /**
      * Method simulates a turn of combat:
      * Method "rolls a dice" once, and then sets the correct text as the middle element in the given CombatView
@@ -39,13 +31,13 @@ public class CombatButtonHandler {
     public void handle(CombatView view, Being player, Being enemy) {
         dice.roll();
         if (dice.criticalMiss()) {
-            player.takeDamage(damageToSelf);
-            view.setMiddle("You rolled a " + dice.getResult() + "?! " + "The " + enemy.getName() + " hit you for " + damageToSelf + " hp!");
+            player.takeDamage(player.getDamageTaken());
+            view.setMiddle("You rolled a " + dice.getResult() + "?! " + "The " + enemy.getName() + " hit you for " + player.getDamageTaken() + " hp!");
         } else if (!dice.hit()) {
             view.setMiddle("You rolled a " + dice.getResult() + ". " + "You missed!");
         } else {
-            enemy.takeDamage(damageToEnemy);
-            view.setMiddle("You rolled a " + dice.getResult() + ". " + "You hit the " + enemy.getName() + " for " + damageToEnemy + " hp!");
+            enemy.takeDamage(enemy.getDamageTaken());
+            view.setMiddle("You rolled a " + dice.getResult() + ". " + "You hit the " + enemy.getName() + " for " + enemy.getDamageTaken() + " hp!");
         } 
         
     }
