@@ -18,10 +18,10 @@ Sovellus koostuu parista eri näkymästä:
   * Pelaajalle esitetään tekstinpätkä ja pari mahdollista reaktiota. Pelaaja valitsee haluamansa reaktion painamalla sen painiketta hiiren avulla.
 
 2. "Taistelunäkymä":
-  * Pelaajalle esitetään hänen, sekä häntä vastaan taistelevan olennon elämäpisteet. Tappelu tapahtuu "vuoropohjaisesti" esim. **lyö** -nappia painamalla :^)
+  * Pelaajalle esitetään hänen, sekä häntä vastaan taistelevan olennon elämäpisteet. Tappelu tapahtuu "vuoropohjaisesti" **Strike** -nappia painamalla :^)
 
-3. Alkunäkymä
-  * Valikko josta pelaaja voi valita aloittaako hän uuden pelin, vai jatkaako aikaisempaa pelikertaa.
+3. Alkunäkymät
+  * Valikko josta pelaaja voi aloittaa uuden pelin, sekä valita sopivan vaikeustason.
 
 
 ### Perusversion tarjoama toiminnallisuus
@@ -30,15 +30,7 @@ Sovellus koostuu parista eri näkymästä:
 
 * Pelaaja voi läpäistä eli "voittaa" pelin.
 
-* Pelaaja voi tallentaa pelin, ja jatkaa tallennetusta näkymästä kun sovellus käynnistetään seuraavan kerran.
-
-
 
 #### Jatkokehitysideoita
-
-* Tavoitteet: 
-  *  **Sovelluslogiikan yleistäminen sille tasolle, että uusien näkymien lisääminen on mahdollisimman helppoa** *(esim. tiedostoon kirjoittamalla)*
-
-* Ajan salliessa:
   * "Pelimekaniikkojen" syventäminen (esim. esineitä, taikoja yms.)
   * Hallittavien hahmojen määrän kasvattaminen
